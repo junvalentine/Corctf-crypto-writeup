@@ -1,5 +1,6 @@
 # Corctf-crypto-writeup
 Tập tành làm hecker. Cũng vì tập tành nên code hơi ngu :D.
+P/s: Hiện có 3/11 câu và đang tiếp tục giải, có sẽ bỏ vào tiếp.
 ## Tadpole
 >tadpoles only know the alphabet up to b... how will they ever know what p is?
 
