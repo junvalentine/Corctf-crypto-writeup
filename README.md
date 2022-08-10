@@ -152,7 +152,7 @@ print(iv.hex() + cipher.encrypt(pad(flag, 16)).hex())
 #e0364f9f55fc27fc46f3ab1dc9db48fa482eae28750eaba12f4f76091b099b01fdb64212f66caa6f366934c3b9929bad37997b3f9d071ce3c74d3e36acb26d6efc9caa2508ed023828583a236400d64e
 ```
 ### Solution:
-Do mới tập tành học Crypto nên bài này khá ngộp với mình ban đầu, tuy nhiên may mắn là vẫn kịp giải ra trong thời gian diễn ra CTF :D.
+Do mới là newbie nên bài này khá ngộp với mình ban đầu, tuy nhiên may mắn là vẫn kịp giải ra trong thời gian diễn ra CTF :D.
 
 Bài dùng AES để encrypt flag, tuy nhiên vấn đề chính là key được bỏ vào công thức tuyến tính cấp 1, và iv được gắn chung với ciphertext, tức đây là 1 bài LCG. Từ công thức $S_{n}=aS_{n-1}+b [p]$, ta có được $S_{n}=a^nS_{0}+\frac{a^n-1}{a-1}b[p]$. Thay $S_{0}$ bởi $s$, $S_{n}$ bởi $A$ và $B$, ta tính được $a^{apriv}$ và $a^{bpriv}$ bằng phép biến đổi. Đến đây bằng may mắn, mình đã tính được a_priv và b_priv bằng discrete logarithm, có thể xài tool trên mạng để tính. Cuối cùng, tính shared để lấy key, brute force tách iv, ciphertext và decrypt ra, voila !
 
